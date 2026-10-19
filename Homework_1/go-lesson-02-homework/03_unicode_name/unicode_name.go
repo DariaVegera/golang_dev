@@ -18,5 +18,9 @@ func AnalyzeName(name string) (byteCount, runeCount, latinCount, cyrillicCount i
 		positions = append(positions, i)
 	}
 
-	return 
+	if byteCount == 0 {
+		return 0, 0, 0, 0, nil
+	}
+
+	return byteCount, runeCount, latinCount, cyrillicCount, positions
 }
